@@ -1,0 +1,41 @@
+{
+    "name": "manovotny/wp-google-dfp-ads",
+    "version": "0.0.0",
+    "description": "Adds Google DFP Ads to WordPress.",
+    "type": "library",
+    "homepage": "https://github.com/manovotny/wp-google-dfp-ads",
+    "authors": [
+        {
+            "name": "Michael Novotny",
+            "email": "manovotny@gmail.com",
+            "homepage": "http://manovotny.com",
+            "role": "Developer"
+        }
+    ],
+    "license": "GPL-3.0+",
+    "keywords": [
+        "wordpress"
+    ],
+    "require": {
+
+    },
+    "require-dev": {
+        "manovotny/wp-phpunit-helpers": "~1.0",
+        "phpunit/phpunit": "4.1.*"
+    },
+    "autoload": {
+        "classmap": [
+            "src"
+        ],
+        "files": [
+            "wp-google-dfp-ads.php"
+        ]
+    },
+    "autoload-dev": {
+        "classmap": [
+            "vendor/phpunit",
+            "vendor/sebastian",
+            "vendor/symfony"
+        ]
+    }
+}

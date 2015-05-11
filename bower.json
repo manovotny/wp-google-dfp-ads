@@ -1,0 +1,25 @@
+{
+    "name": "wp-google-dfp-ads",
+    "version": "0.0.0",
+    "description": "Adds Google DFP Ads to WordPress.",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/manovotny/wp-google-dfp-ads.git"
+    },
+    "keywords": [
+        "wordpress"
+    ],
+    "authors": [
+        {
+            "name": "Michael Novotny",
+            "email": "manovotny@gmail.com",
+            "homepage": "http://manovotny.com"
+        }
+    ],
+    "devDependencies": {
+        "bootstrap-sass-official": "^3.3.0",
+        "grunticon-templates": "git://github.com/manovotny/grunticon-templates.git#^1.0.1",
+        "sass-lint-config": "git://github.com/manovotny/sass-lint-config.git#0.1.0",
+        "scut": "~1.0.1"
+    }
+}
