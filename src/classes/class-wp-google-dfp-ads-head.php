@@ -53,6 +53,13 @@ class WP_Google_DFP_Ads_Head {
     public function __render() {
 
         $script = get_option( WP_Google_DFP_Ads_Settings_Head_Input::get_instance()->get_id() );
+
+        if ( empty( $script ) ) {
+
+            return;
+
+        }
+
         $comment = __( 'WP Google DFP Ads: Head', WP_Google_DFP_Ads::get_instance()->get_slug() );
 
         echo '<!-- ' . $comment . ' -->' . PHP_EOL;
