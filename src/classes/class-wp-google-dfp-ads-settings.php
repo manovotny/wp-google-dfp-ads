@@ -91,7 +91,7 @@ class WP_Google_DFP_Ads_Settings {
 
         echo '<h2>' . $title . '</h2>';
 
-        echo '<form method="post" action="options.php">';
+        echo '<form class="' . $this->id . '" method="post" action="options.php">';
 
             do_settings_sections( $this->id );
 

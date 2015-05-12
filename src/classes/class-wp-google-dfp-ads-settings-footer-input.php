@@ -93,7 +93,7 @@ class WP_Google_DFP_Ads_Settings_Footer_Input {
         $value = get_option( $this->id );
 
         echo '<p>';
-            echo '<textarea id="' . $this->id . '" name="' . $this->id . '" rows="20"">';
+            echo '<textarea id="' . $this->id . '" name="' . $this->id . '" class="control" rows="20"">';
                 echo $value;
             echo '</textarea>';
         echo '</p>';
