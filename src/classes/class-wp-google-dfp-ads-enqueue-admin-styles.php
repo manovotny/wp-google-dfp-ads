@@ -52,22 +52,28 @@ class WP_Google_DFP_Ads_Enqueue_Admin_Styles {
      */
     public function __enqueue_styles() {
 
-        $handle = WP_Google_DFP_Ads::get_instance()->get_slug() . '-admin-styles';
-        $relative_path = __DIR__ . '/../admin/css/';
-        $filename = 'wp-google-dfp-ads.min.css';
-        $filename_debug = 'wp-google-dfp-ads.css';
-        $dependencies = array();
+        $screen = get_current_screen();
 
-        $options = new WP_Enqueue_Options(
-            $handle,
-            $relative_path,
-            $filename,
-            $filename_debug,
-            $dependencies,
-            WP_Google_DFP_Ads::get_instance()->get_version()
-        );
+        if ( 'settings_page_' . WP_Google_DFP_Ads_Settings::get_instance()->get_id() === $screen->id ) {
 
-        WP_Enqueue_Util::get_instance()->enqueue_style( $options );
+            $handle = WP_Google_DFP_Ads::get_instance()->get_slug() . '-admin-styles';
+            $relative_path = __DIR__ . '/../admin/css/';
+            $filename = 'wp-google-dfp-ads.min.css';
+            $filename_debug = 'wp-google-dfp-ads.css';
+            $dependencies = array();
+
+            $options = new WP_Enqueue_Options(
+                $handle,
+                $relative_path,
+                $filename,
+                $filename_debug,
+                $dependencies,
+                WP_Google_DFP_Ads::get_instance()->get_version()
+            );
+
+            WP_Enqueue_Util::get_instance()->enqueue_style( $options );
+
+        }
 
     }
 
