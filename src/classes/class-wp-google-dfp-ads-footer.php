@@ -53,9 +53,10 @@ class WP_Google_DFP_Ads_Footer {
     public function __render() {
 
         $script = get_option( WP_Google_DFP_Ads_Settings_Footer_Input::get_instance()->get_id() );
+        $comment = __( 'WP Google DFP Ads: Footer', WP_Google_DFP_Ads::get_instance()->get_slug() );
 
-        echo $script;
-        echo PHP_EOL;
+        echo '<!-- ' . $comment . ' -->' . PHP_EOL;
+        echo $script . PHP_EOL;
 
     }
 
