@@ -13,7 +13,7 @@ class WP_Google_DFP_Ads_Settings_Fields {
     protected static $instance = null;
 
     /**
-     * TODO
+     * Class id.
      *
      * @var string
      */
@@ -23,9 +23,9 @@ class WP_Google_DFP_Ads_Settings_Fields {
     ---------------------------------------------------------------------------------- */
 
     /**
-     * TODO
+     * Gets class id.
      *
-     * @return mixed
+     * @return string Class id.
      */
     public function get_id() {
 
