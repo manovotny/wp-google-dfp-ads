@@ -1,6 +1,6 @@
 <?php
 
-class WP_Google_DFP_Ads_Settings {
+class WP_Google_DFP_Ads_Settings_Head_Input {
 
     /* Properties
     ---------------------------------------------------------------------------------- */
@@ -8,7 +8,7 @@ class WP_Google_DFP_Ads_Settings {
     /**
      * Instance of the class.
      *
-     * @var WP_Google_DFP_Ads_Settings
+     * @var WP_Google_DFP_Ads_Settings_Head_Input
      */
     protected static $instance = null;
 
@@ -17,7 +17,7 @@ class WP_Google_DFP_Ads_Settings {
      *
      * @var string
      */
-    protected $id = 'wp-google-dfp-ads-settings';
+    protected $id = 'wp-google-dfp-ads-head-script-input';
 
     /* Public
     ---------------------------------------------------------------------------------- */
@@ -36,7 +36,7 @@ class WP_Google_DFP_Ads_Settings {
     /**
      * Gets instance of class.
      *
-     * @return WP_Google_DFP_Ads_Settings Instance of the class.
+     * @return WP_Google_DFP_Ads_Settings_Head_Input Instance of the class.
      */
     public static function get_instance() {
 
@@ -58,7 +58,7 @@ class WP_Google_DFP_Ads_Settings {
      */
     public function __construct() {
 
-        add_action( 'admin_menu', array( $this, '__initialize' ) );
+        add_action( 'admin_init', array( $this, '__initialize' ) );
 
     }
 
@@ -66,18 +66,21 @@ class WP_Google_DFP_Ads_Settings {
     ---------------------------------------------------------------------------------- */
 
     /**
-     * Initializes view.
+     * Initializes settings.
      */
     public function __initialize() {
 
-        $menu_title = __( 'Google DFP Ads', WP_Google_DFP_Ads::get_instance()->get_slug() );
-
-        add_options_page(
-            $menu_title,
-            $menu_title,
-            'manage_options',
+        add_settings_field(
             $this->id,
-            array( $this, '__render' )
+            __( 'Script Block', WP_Google_DFP_Ads::get_instance()->get_slug() ),
+            array( $this, '__render' ),
+            WP_Google_DFP_Ads_Settings::get_instance()->get_id(),
+            WP_Google_DFP_Ads_Settings_Head_Section::get_instance()->get_id()
+        );
+
+        register_setting(
+            WP_Google_DFP_Ads_Settings_Fields::get_instance()->get_id(),
+            $this->id
         );
 
     }
@@ -87,19 +90,13 @@ class WP_Google_DFP_Ads_Settings {
      */
     public function __render() {
 
-        $title = __( 'Google DFP Ads Settings', WP_Google_DFP_Ads::get_instance()->get_slug() );
+        $value = get_option( $this->id );
 
-        echo '<h2>' . $title . '</h2>';
-
-        echo '<form method="post" action="options.php">';
-
-            do_settings_sections( $this->id );
-
-            settings_fields( WP_Google_DFP_Ads_Settings_Fields::get_instance()->get_id() );
-
-            submit_button();
-
-        echo '</form>';
+        echo '<p>';
+            echo '<textarea id="' . $this->id . '" name="' . $this->id . '" rows="20"">';
+                echo $value;
+            echo '</textarea>';
+        echo '</p>';
 
     }
 

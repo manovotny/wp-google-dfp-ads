@@ -1,6 +1,6 @@
 <?php
 
-class WP_Google_DFP_Ads_Head_Script {
+class WP_Google_DFP_Ads_Head {
 
     /* Properties
     ---------------------------------------------------------------------------------- */
@@ -8,7 +8,7 @@ class WP_Google_DFP_Ads_Head_Script {
     /**
      * Instance of the class.
      *
-     * @var WP_Google_DFP_Ads_Settings
+     * @var WP_Google_DFP_Ads_Head
      */
     protected static $instance = null;
 
@@ -18,7 +18,7 @@ class WP_Google_DFP_Ads_Head_Script {
     /**
      * Gets instance of class.
      *
-     * @return WP_Google_DFP_Ads_Settings Instance of the class.
+     * @return WP_Google_DFP_Ads_Head Instance of the class.
      */
     public static function get_instance() {
 
@@ -40,7 +40,7 @@ class WP_Google_DFP_Ads_Head_Script {
      */
     public function __construct() {
 
-        add_action( 'wp_head', array( $this, '__initialize' ) );
+        add_action( 'wp_head', array( $this, '__render' ) );
 
     }
 
@@ -48,11 +48,11 @@ class WP_Google_DFP_Ads_Head_Script {
     ---------------------------------------------------------------------------------- */
 
     /**
-     * Initializes view.
+     * Renders view.
      */
-    public function __initialize() {
+    public function __render() {
 
-        $script = get_option( WP_Google_DFP_Ads_Head_Settings::get_instance()->get_field_id() );
+        $script = get_option( WP_Google_DFP_Ads_Settings_Head_Input::get_instance()->get_id() );
 
         echo $script;
         echo PHP_EOL;
