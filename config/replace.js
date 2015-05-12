@@ -19,7 +19,7 @@ module.exports = (function () {
             name: 'WP Google DFP Ads',
             slug: 'wp-google-dfp-ads',
             url: 'https://github.com/manovotny/wp-google-dfp-ads',
-            version: '0.0.0'
+            version: '1.0.0'
         },
         translations: {
             domain: 'wp-google-dfp-ads',

@@ -3,7 +3,7 @@
  * Plugin Name: WP Google DFP Ads
  * Plugin URI: https://github.com/manovotny/wp-google-dfp-ads
  * Description: Adds Google DFP Ads to WordPress.
- * Version: 0.0.0
+ * Version: 1.0.0
  * Author: Michael Novotny
  * Author URI: http://manovotny.com
  * License: GPL-3.0+
