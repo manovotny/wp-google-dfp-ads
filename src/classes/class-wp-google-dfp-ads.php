@@ -24,7 +24,7 @@ class WP_Google_DFP_Ads {
      *
      * @var string
      */
-    protected $version = '1.0.1';
+    protected $version = '1.0.2';
 
     /* Public
     ---------------------------------------------------------------------------------- */
