@@ -1,6 +1,6 @@
 <?php
 
-class WP_Google_DFP_Ads_Settings_Head_Input {
+class WP_Google_DFP_Ads_Settings_Footer_Input {
 
     /* Properties
     ---------------------------------------------------------------------------------- */
@@ -8,7 +8,7 @@ class WP_Google_DFP_Ads_Settings_Head_Input {
     /**
      * Instance of the class.
      *
-     * @var WP_Google_DFP_Ads_Settings_Head_Input
+     * @var WP_Google_DFP_Ads_Settings_Footer_Input
      */
     protected static $instance = null;
 
@@ -17,7 +17,7 @@ class WP_Google_DFP_Ads_Settings_Head_Input {
      *
      * @var string
      */
-    protected $id = 'wp-google-dfp-ads-head-input';
+    protected $id = 'wp-google-dfp-ads-footer-input';
 
     /* Public
     ---------------------------------------------------------------------------------- */
@@ -36,7 +36,7 @@ class WP_Google_DFP_Ads_Settings_Head_Input {
     /**
      * Gets instance of class.
      *
-     * @return WP_Google_DFP_Ads_Settings_Head_Input Instance of the class.
+     * @return WP_Google_DFP_Ads_Settings_Footer_Input Instance of the class.
      */
     public static function get_instance() {
 
@@ -75,7 +75,7 @@ class WP_Google_DFP_Ads_Settings_Head_Input {
             __( 'Script Block', WP_Google_DFP_Ads::get_instance()->get_slug() ),
             array( $this, '__render' ),
             WP_Google_DFP_Ads_Settings::get_instance()->get_id(),
-            WP_Google_DFP_Ads_Settings_Head_Section::get_instance()->get_id()
+            WP_Google_DFP_Ads_Settings_Footer_Section::get_instance()->get_id()
         );
 
         register_setting(
