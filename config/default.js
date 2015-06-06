@@ -28,7 +28,7 @@ module.exports = (function () {
             slug: 'wp-google-dfp-ads',
             type: 'plugin', // Should be `plugin` or `theme`.
             url: 'https://github.com/manovotny/wp-google-dfp-ads',
-            version: '1.0.2'
+            version: '1.1.0'
         }
     };
 
